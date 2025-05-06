@@ -1,0 +1,14 @@
+This page is for assignment from intellipaat project assignment module-3 case study-1
+
+Tasks To Be Performed:
+1.
+a. Create a user account that can login to the console
+b. Create a group and make sure that the group can only launch and
+stop EC2 instances using that previously created account.
+
+2.
+a. Provide permission to let the user of a previously created account to
+create VPCs, Subnets, NACL and security groups
+b. Further add the permission so that the user can create RDS instance
+c. Explore security options to protect the AWS resources and secure
+the permissions
