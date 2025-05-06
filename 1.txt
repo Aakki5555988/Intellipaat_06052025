@@ -12,3 +12,70 @@ create VPCs, Subnets, NACL and security groups
 b. Further add the permission so that the user can create RDS instance
 c. Explore security options to protect the AWS resources and secure
 the permissions
+
+Steps:
+
+1. Create user account using by IAM service
+2. Create user group and allowe the permission to user
+3. allow the permission launch and stop by policy generator or JSON format
+4. {
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:StartInstances",
+        "ec2:StopInstances",
+        "ec2:DescribeInstances"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+
+5. Name the particular policy and create and you can access the EC2 machine by giving allow and stop permission
+
+ Task 2: Add VPC, Subnet, NACL, Security Group, and RDS Permissions
+ a. Extend permissions to allow VPC and networking setup
+Go to IAM → Policies → Create Policy
+
+7. {
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:CreateVpc",
+        "ec2:CreateSubnet",
+        "ec2:CreateSecurityGroup",
+        "ec2:CreateNetworkAcl",
+        "ec2:CreateNetworkAclEntry",
+        "ec2:Describe*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+
+8.Add permission to create RDS instances
+9. {
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "rds:CreateDBInstance",
+        "rds:DescribeDBInstances"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+
+10. 3: Secure Permissions and Resources
+✅ Best Security Practices:
+Use IAM Conditions: Restrict actions by IP, tag, or time.
+
+Enable MFA: For the IAM user 
+
+
